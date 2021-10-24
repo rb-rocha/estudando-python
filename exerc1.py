@@ -1,4 +1,7 @@
-numExec = int(input('Digite o número do exercício desejado (01-10): '))
+import os
+from time import sleep
+
+num_exec = 11
 
 
 def peaple_factory(nome, sobrenome, idade):
@@ -17,120 +20,119 @@ def dict_factory(rua, bairro, numero):
     }
 
 
-if (numExec == 1):
-    listaNum = []
-    print('Exercício 1:')
-    for number in range(0, 10):
-        listaNum.append(number)
-        # end é utilizado para não pular linha e definir o que deve vir depois
-        print(number, end=' ')
+while (num_exec != 0):
+    num_exec = int(input('Digite o número do exercício desejado (01-10): '))
 
+    if (num_exec == 1):
+        listaNum = []
+        print('Exercício 1:')
+        for number in range(0, 10):
+            listaNum.append(number)
+            # end é utilizado para não pular linha e definir o que deve vir depois
+            print(number, end=' ')
 
-elif (numExec == 2):
-    print('Exercício 2:')
-    pessoa1 = peaple_factory('Roberto', 'Rocha', 22)
-    pessoa2 = peaple_factory('Rychard', 'Megda', 23)
-    pessoa3 = peaple_factory('Rafael', 'Rosario', 23)
-    pessoa4 = peaple_factory('Bruno', 'Rodrigues', 23)
-    pessoa5 = peaple_factory('Mateus', 'Rangel', 23)
+    elif (num_exec == 2):
+        print('Exercício 2:')
+        pessoa1 = peaple_factory('Roberto', 'Rocha', 22)
+        pessoa2 = peaple_factory('Rychard', 'Megda', 23)
+        pessoa3 = peaple_factory('Rafael', 'Rosario', 23)
+        pessoa4 = peaple_factory('Bruno', 'Rodrigues', 23)
+        pessoa5 = peaple_factory('Mateus', 'Rangel', 23)
 
-    peaples = [pessoa1, pessoa2, pessoa3, pessoa4, pessoa5]
+        peaples = [pessoa1, pessoa2, pessoa3, pessoa4, pessoa5]
 
-    for peaple in peaples:
-        print(peaple)
+        for peaple in peaples:
+            print(peaple)
 
+    elif (num_exec == 3):
+        print('Exercício 3:')
 
-elif (numExec == 3):
-    print('Exercício 3:')
+        frase1 = 'Estou estundado'
+        frase2 = 'Python'
 
-    frase1 = 'Estou estundado'
-    frase2 = 'Python'
+        frase3 = frase1 + ' ' + frase2
 
-    frase3 = frase1 + ' ' + frase2
+        print(frase3)
 
-    print(frase3)
+    elif (num_exec == 4):
+        print('Exercício 4:')
 
+        tupla_numbers = (1, 2, 2, 3, 4, 4, 4, 5)
 
-elif (numExec == 4):
-    print('Exercício 4:')
+        numbers_of_4 = tupla_numbers.count(4)
 
-    tupla_numbers = (1, 2, 2, 3, 4, 4, 4, 5)
+        print("Número de repetições do 4 :", numbers_of_4)
 
-    numbers_of_4 = tupla_numbers.count(4)
+    elif (num_exec == 5):
+        print('Exercício 5:')
 
-    print("Número de repetições do 4 :", numbers_of_4)
+        dict1 = {}
 
+        print(dict1)
 
-elif (numExec == 5):
-    print('Exercício 5:')
+    elif (num_exec == 6):
+        print('Exercício 6:')
 
-    dict1 = {}
+        dict1 = {
+            'rua': 'General Ozorio',
+            'bairro': 'Lapa',
+            'num': 189
+        }
 
-    print(dict1)
+        print(dict1)
 
+    elif (num_exec == 7):
+        dict1 = {}
 
-elif (numExec == 6):
-    print('Exercício 6:')
+        print('Exercício 7:')
 
-    dict1 = {
-        'rua': 'General Ozorio',
-        'bairro': 'Lapa',
-        'num': 189
-    }
+        endereco = {'rua2': 'Rua dos bobos',
+                    'bairo2': 'Candelabrio',
+                    'num2': 0}
 
-    print(dict1)
+        dict1.update(endereco)
 
+        print(dict1)
 
-elif (numExec == 7):
-    dict1 = {}
+    elif (num_exec == 8):
+        print('Exercício 8:')
 
-    print('Exercício 7:')
+        dict2 = {
+            'pessoa': 'Carlos',
+            'chaves': [12, 36],
+            'status': 1
+        }
 
-    endereco = {'rua2': 'Rua dos bobos',
-                'bairo2': 'Candelabrio',
-                'num2': 0}
+        print(dict2)
 
-    dict1.update(endereco)
+    elif (num_exec == 9):
+        print('Exercício 9:')
 
-    print(dict1)
+        dict3 = {
+            'name': 'Casa da Moeda',
+            'coins': ('Dollar', 'Real Brasileiro'),
+            'dict4': {
+                'open': '08:00hr',
+                'close': '17:00hr'
+            },
+            'balance': 147325.78
+        }
 
+        print(dict3)
 
-elif (numExec == 8):
-    print('Exercício 8:')
+    elif (num_exec == 10):
+        print('Exercício 10:')
 
-    dict2 = {
-        'pessoa': 'Carlos',
-        'chaves': [12, 36],
-        'status': 1
-    }
+        frase = 'Cientista de Dados é o profissional mais sexy do século XXI'
 
-    print(dict2)
+        for i in range(1, 18):
+            print(frase[i], end='')
 
+    elif (num_exec == 0):
+        continue
 
-elif (numExec == 9):
-    print('Exercício 9:')
+    else:
+        print('valor do exercício inválido!', end='\n')
 
-    dict3 = {
-        'name': 'Casa da Moeda',
-        'coins': ('Dollar', 'Real Brasileiro'),
-        'dict4': {
-            'open': '08:00hr',
-            'close': '17:00hr'
-        },
-        'balance': 147325.78
-    }
-
-    print(dict3)
-
-
-elif (numExec == 10):
-    print('Exercício 10:')
-
-    frase = 'Cientista de Dados é o profissional mais sexy do século XXI'
-
-    for i in range(1, 18):
-        print(frase[i], end='')
-
-
-else:
-    print('Valor inválido!')
+    sleep(3)
+    os.system('cls')
